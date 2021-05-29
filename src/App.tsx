@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { Route, Switch } from 'react-router-dom'
 
-function App() {
+import GlobalStyles from './Styles/GlobalStyles';
+
+import Properties from './Pages/Properties';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <GlobalStyles />
+      
+      <Switch>
+        <Route path='/' component={Properties}  />
+        <Route path='/calendar' />
+        <Route path='/clients' />
+        <Route path='/budget' />
+        <Route path='/properties'/>
+        <Route path='/control' />
+      </Switch>
+    </Fragment>
   );
 }
 
