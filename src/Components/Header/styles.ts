@@ -6,7 +6,7 @@ import { BsCardChecklist, BsHouse } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 
 
-export const Container = styled.div`
+export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,14 +36,22 @@ export const Title = styled.h1`
   }
 `;
 
-export const Item = styled.button`
+interface ItemProps {
+  borderColor: boolean;
+}
+
+export const Item = styled.button<ItemProps>`
   color: var(--white);
   font-size: 18px;
-  padding:20px;
+  padding: 20px;
+
+  border-bottom: 2px solid;
+  border-color: ${({ borderColor }) => borderColor ? '#db524f' : '#000000' };
 
   :hover {
     background-color: var(--darkGrey);
     cursor: pointer;
+    border-color: ${({ borderColor }) => borderColor ? '#db524f' : '#303030' };
   }
 `;
 
@@ -51,6 +59,10 @@ export const ItemText = styled.button`
   display: none;
   color: var(--white);
   font-size: 18px;
+
+  :hover {
+    cursor: pointer;
+  }
 
   @media (min-width: 920px) {
     display: inline;

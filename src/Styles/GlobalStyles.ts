@@ -20,6 +20,7 @@ export default createGlobalStyle`
 
   :root {
     --primary: #F6413D;
+    --price: #38cf51;
 
     --lightWhite: #ffffff;
     --white: #f0f0f0;

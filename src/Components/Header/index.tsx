@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import {
   Container,
@@ -16,27 +17,54 @@ import {
 } from './styles';
 
 const Header: React.FC = () => {
+  const [routeSelect, setRouteSelect] = useState<string>();
+  const history = useHistory();
+
+  function handleItem(routeName: string) {
+    setRouteSelect(routeName);
+    navigate(routeName);
+    console.log(routeName);
+  }
+
+  function navigate(routeName: string) {
+    history.push(`/${routeName}`);
+  }  
+
   return (
     <Container>
       <LeftSide>
         <Title>SEAZONE</Title>
-        <Item>
+        <Item
+          onClick={() => handleItem('calendar')}
+            borderColor={routeSelect === 'calendar' ? true : false}>
           <ItemText>Calendário</ItemText>
           <CalendarIcon />
         </Item>
-        <Item>
+
+        <Item
+          onClick={() => handleItem('clients')}
+          borderColor={routeSelect === 'clients' ? true : false}>
           <ItemText>Clientes</ItemText>
           <ClientIcon />
         </Item>
-        <Item>
+
+        <Item
+          onClick={() => handleItem('budget')}
+          borderColor={routeSelect === 'budget' ? true : false}>
           <ItemText>Orçamentos</ItemText>
           <BudgetIcon />
         </Item>
-        <Item>
+
+        <Item
+          onClick={() => handleItem('properties')}
+          borderColor={routeSelect === 'properties' ? true : false}>
           <ItemText>Propriedades</ItemText>
           <PropertyIcon />
         </Item>
-        <Item>
+
+        <Item
+          onClick={() => handleItem('control')}
+          borderColor={routeSelect === 'control' ? true : false}>
           <ItemText>Controle</ItemText>
           <ControlIcon />
         </Item>
