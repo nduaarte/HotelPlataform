@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { AiOutlineCaretDown } from 'react-icons/ai';
 
 export const Container = styled.div`
   display: flex;
@@ -31,8 +32,12 @@ export const ItemName = styled.label`
   }
 `;
 
-export const ItemSelect = styled.select`
-  padding: 10px;
+export const ItemSelect = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 12px;
   width: 110px;
   height: 40px;
   border-radius: 5px;
@@ -46,6 +51,15 @@ export const ItemSelect = styled.select`
     width: 150px;
     height: 45px;
   }
+`;
+
+export const ItemText = styled.span`
+  
+`;
+
+export const ArrowIcon = styled(AiOutlineCaretDown)`
+  width: 13px;
+  height: 13px;
 `;
 
 export const Wrapper = styled.div`

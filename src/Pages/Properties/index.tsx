@@ -7,11 +7,10 @@ import Header from '../../Components/Header';
 import Filter from '../../Components/Filter';
 import PropertyCard from '../../Components/PropertyCard';
 
-import banner from '../../assets/images/hotel1.jpg'
-
 const Properties: React.FC = () => {
   const ALL_PROPERTIES = api.map(item => (
     <PropertyCard
+      Property={item}
       title={item.name}
       description={item.description}
       banner={item.image}

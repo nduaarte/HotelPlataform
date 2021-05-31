@@ -1,11 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
+import { RootState } from '../../Redux/InfoPropertyReducer';
 
 import Header from '../../Components/Header';
 import Filter from '../../Components/Filter';
-
-import img from '../../assets/images/hotel1.jpg';
-
-import Cards from './Cards';
+import Cards from '../../Components/Cards';
 
 import { 
   Container, 
@@ -21,25 +21,33 @@ import {
 } from './styles';
 
 const InfoProperty: React.FC = () => {
+  const Property = useSelector((state: RootState) => state.InfoPropertyReducer.property);
+  const { name, info, image, privileges, status } = Property;
+  const { address, district, maxPeoples, cleaningRate, securityDeposit } = info;
+
   return (
     <Container>
       <Header />
       <Filter />
       <Wrapper>
         <LeftSide>
-          <ImageProperty src={img} />
+          <ImageProperty src={image} />
           <SubTitle>Localização</SubTitle>
-          <Description>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}</Description>
+          <Description>{`${address} - ${district}`}</Description>
         </LeftSide>
         <RightSide>
-          <PropertyName>{'Hotel fuinha, vista mar top'}</PropertyName>
-          <Description>{'Juerere internacional, Floripa'}</Description>
+          <PropertyName>{name}</PropertyName>
+          <Description>{district}</Description>
           <Row>
-            <Description color='#ffff' >{'tv, wifi, garagem'}</Description>
-            <Availability>{'disponível'}</Availability>
+            <Description color='#ffff' >{privileges}</Description>
+            <Availability status={status} >{status ? 'Disponível' : 'Indisponível'}</Availability>
           </Row>
 
-          <Cards />
+          <Cards
+            peoples={maxPeoples}
+            cleaningRate={cleaningRate}
+            securityDeposit={securityDeposit}
+          />
         </RightSide>
       </Wrapper>
     </Container>

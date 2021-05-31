@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import {
   Container,
@@ -16,7 +18,8 @@ import {
 } from './styles';
 
 interface PropsTyes {
-  banner?: string;
+  Property: Object;
+  banner: string;
   title: string;
   description: string;
   valueDay: number;
@@ -28,6 +31,7 @@ interface PropsTyes {
 }
 
 const PropertyCard: React.FC<PropsTyes> = ({
+  Property,
   banner,
   title,
   description,
@@ -38,9 +42,17 @@ const PropertyCard: React.FC<PropsTyes> = ({
   district,
   totalValue
 }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  function dispatchToNavigate(Property: Object) {
+    dispatch({ type: 'UPDATE_PROPERTY', value: Property });
+    history.push('./infoProperty');
+  }
+
   return (
     <Container>
-      <Banner src={banner} />
+      <Banner src={banner} onClick={() => dispatchToNavigate(Property)} />
       <Title>{title}</Title>
       <Description>{description}</Description>
       <Row>

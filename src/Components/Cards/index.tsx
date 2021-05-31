@@ -3,31 +3,33 @@ import React from 'react';
 import { Container, Card, CardTitle, Row, CardValue, PeopleIcon, CleanIcon, PayIcon } from './styles';
 
 interface PropsTyes {
-
+  peoples: number;
+  cleaningRate: number;
+  securityDeposit: number;
 }
 
-const Cards: React.FC<PropsTyes> = () => {
+const Cards: React.FC<PropsTyes> = ({ peoples, cleaningRate, securityDeposit }) => {
   return (
     <Container>
       <Card>
         <CardTitle>Máx. de hóspedes</CardTitle>
         <Row>
           <PeopleIcon />
-          <CardValue>{`${'6'} pessoas`}</CardValue>
+          <CardValue>{`${peoples} pessoas`}</CardValue>
         </Row>
       </Card>
       <Card>
-        <CardTitle>Máx. de hóspedes</CardTitle>
+        <CardTitle>Taxa de limpeza</CardTitle>
         <Row>
           <CleanIcon />
-          <CardValue>{`R$${'60'},00`}</CardValue>
+          <CardValue>{`R$${cleaningRate},00`}</CardValue>
         </Row>
       </Card>
       <Card>
-        <CardTitle>Máx. de hóspedes</CardTitle>
+        <CardTitle>Caução</CardTitle>
         <Row>
           <PayIcon />
-          <CardValue>{`R$${'700'},00`}</CardValue>
+          <CardValue>{`R$${securityDeposit},00`}</CardValue>
         </Row>
       </Card>
     </Container>

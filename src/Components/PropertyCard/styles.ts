@@ -25,11 +25,13 @@ export const Container = styled.div`
 export const Banner = styled.img`
   border-radius: 20px 20px 2% 2%;
   width: 100%;
-  height: 100px;
+  height: 120px;
   object-fit: cover;
 
   -webkit-box-shadow: 9px 9px 24px -10px rgba(0,0,0,0.55); 
   box-shadow: 9px 9px 24px -10px rgba(0,0,0,0.55);
+
+  cursor: pointer;
 
   @media (min-width: 1150px) {
     height: 180px;
