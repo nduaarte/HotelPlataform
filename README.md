@@ -7,10 +7,18 @@
 
 #### Outras imagens 📷
 
-![](https://user-images.githubusercontent.com/60564538/120245654-348aac00-c244-11eb-8c95-8a6a0b335f12.png)
-![](https://user-images.githubusercontent.com/60564538/120245655-35bbd900-c244-11eb-853f-fa06ba3da5cd.png)
-![](https://user-images.githubusercontent.com/60564538/120245658-37859c80-c244-11eb-82c3-c31d13c84348.png)
-![](https://user-images.githubusercontent.com/60564538/120245659-381e3300-c244-11eb-9178-39526c0bb2fb.png)
+<img 
+  src='https://user-images.githubusercontent.com/60564538/120245654-348aac00-c244-11eb-8c95-8a6a0b335f12.png' width='300' height='200'
+>
+<img 
+  src='https://user-images.githubusercontent.com/60564538/120245655-35bbd900-c244-11eb-853f-fa06ba3da5cd.png' width='300' height='200'
+>
+<img 
+  src='https://user-images.githubusercontent.com/60564538/120245658-37859c80-c244-11eb-82c3-c31d13c84348.png' width='300' height='200'
+>
+<img 
+  src='https://user-images.githubusercontent.com/60564538/120245659-381e3300-c244-11eb-9178-39526c0bb2fb.png' width='300' height='200'
+>
 
 ### Tecnologias usadas
 
