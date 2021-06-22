@@ -33,7 +33,7 @@ const Header: React.FC = () => {
   return (
     <Container>
       <LeftSide>
-        <Title>SEAZONE</Title>
+        <Title>HOTEL PARK</Title>
         <Item
           onClick={() => handleItem('calendar')}
             borderColor={routeSelect === 'calendar' ? true : false}>
