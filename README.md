@@ -1,4 +1,4 @@
-# Seazone Challenge
+# HOTEL PLATAFORM
 
 ### A aplicação mostra algumas pousadas disponíveis, podendo ver também, seus detalhes mais especificamente.
 
